@@ -1,0 +1,28 @@
+﻿<Window x:Class="MultiSearch.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MultiSearch"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="817" Width="1059">
+    <Grid>
+        <TextBox x:Name="listSearchTextBox" HorizontalAlignment="Left" Margin="116,24,0,0"  VerticalAlignment="Top" Width="540" Height="18" />
+        <TextBox x:Name="searchFolderTextBox" HorizontalAlignment="Left" Margin="116,64,0,0"  VerticalAlignment="Top" Width="540" Height="18" />
+        <Button x:Name="browseForList" Content="Browse" HorizontalAlignment="Left" Margin="800,24,0,0"  VerticalAlignment="Top" Height="18" Width="82" Click="BrowseForList"/>
+        <Button x:Name="browseForFolder" Content="Browse" HorizontalAlignment="Left" Margin="800,64,0,0" VerticalAlignment="Top" Height="18" Width="82" Click="BrowseForFolder" />
+        <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Margin="800,98,0,0" VerticalAlignment="Top" Height="18" Width="82" Click="SearchList"/>
+        <DataGrid x:Name="ResultsDataGrid" Margin="20,164,169,29" />
+        <Label Content="Search List" HorizontalAlignment="Left" Height="32" Margin="20,17,0,0" VerticalAlignment="Top" Width="91" />
+        <Label Content="Target Folder" HorizontalAlignment="Left" Height="32" Margin="20,61,0,0" VerticalAlignment="Top" Width="91" />
+        <StackPanel Margin="20,107,169,630" StackPanel.Orientation="Horizontal">
+            <Label Content="Include files of this type :" Width="160" Height="27" />
+            <CheckBox x:Name="pdfCheckBox" ContentControl.Content="*.pdf" IsChecked="True" Width="80" Height="16" Checked="pdfCheckBox_Checked" Unchecked="pdfCheckBox_Unchecked"/>
+            <CheckBox x:Name="svgCheckbox" ContentControl.Content="*.svg" Width="80" Height="16" Checked="svgCheckBox_Checked" Unchecked="svgCheckBox_Unchecked" />
+            <CheckBox x:Name="textCheckBox" ContentControl.Content="*.txt" Width="80" Height="16" Checked="textCheckBox_Checked" Unchecked="textCheckBox_Unchecked"/>
+            <CheckBox x:Name="mapCheckBox" ContentControl.Content="*.map" Width="80" Height="16"  Checked="mapCheckBox_Checked" Unchecked="mapCheckBox_Unchecked"/>
+            <CheckBox x:Name="xmlCheckBox" ContentControl.Content="*.xml" Width="80" Height="16" Checked="xmlCheckBox_Checked" Unchecked="xmlCheckBox_Unchecked" />
+        </StackPanel>
+        <Button Content="Export to CSV" HorizontalAlignment="Left" Height="18" Margin="895,737,0,0" VerticalAlignment="Top" Width="100" Click="ExportToCSV" />
+    </Grid>
+</Window>
