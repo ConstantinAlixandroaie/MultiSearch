@@ -65,16 +65,29 @@ namespace MultiSearch
             {
                 searchResults.Clear();
                 ResultsDataGrid.ItemsSource = null;
-                List<string> searchStrings = mainController.GetSearchStrings(this.listSearchTextBox.Text);
-                searchResults.AddRange(mainController.SearchPdfFiles(this.searchFolderTextBox.Text, searchStrings, searchFilter.SearchFilters));
-                searchResults.AddRange(mainController.SearchTextFiles(this.searchFolderTextBox.Text, searchStrings,searchFilter.SearchFilters));
+                List<string> searchStrings = mainController.GetSearchStrings(listSearchTextBox.Text);
+                searchResults.AddRange(mainController.SearchPdfFiles(searchFolderTextBox.Text, searchStrings, searchFilter.SearchFilters));
+                searchResults.AddRange(mainController.SearchTextFiles(searchFolderTextBox.Text, searchStrings,searchFilter.SearchFilters));
                 ResultsDataGrid.ItemsSource = searchResults;
             }
         }
 
+        private void browseForOutput(object sender, RoutedEventArgs e)
+        {
+            CommonOpenFileDialog dialog = new CommonOpenFileDialog
+            {
+                IsFolderPicker = true
+            };
+            if (dialog.ShowDialog() == CommonFileDialogResult.Ok)
+            {
+                outputFolderTextBox.Text = dialog.FileName;
+            }
+
+        }
         private void ExportToCSV(object sender, RoutedEventArgs e)
         {
-            mainController.WriteListToCSV(searchResults);
+           
+            mainController.WriteListToCSV(searchResults,outputFolderTextBox.Text);
         }
 
 

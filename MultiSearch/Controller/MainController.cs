@@ -111,9 +111,9 @@ namespace MultiSearch.Controller
             return myResults;
         }
 
-        public void WriteListToCSV(List<SearchResult> searchResults)
+        public void WriteListToCSV(List<SearchResult> searchResults,string path)
         {
-            FileStream myFile = File.Create(AppDomain.CurrentDomain.BaseDirectory + @"\Results.csv");
+            FileStream myFile = File.Create(path + @"\Results.csv");
             myFile.Close();
             using (StreamWriter writer = File.AppendText(myFile.Name))
             {

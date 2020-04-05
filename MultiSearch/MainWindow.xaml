@@ -12,9 +12,9 @@
         <Button x:Name="browseForList" Content="Browse" HorizontalAlignment="Left" Margin="800,24,0,0"  VerticalAlignment="Top" Height="18" Width="82" Click="BrowseForList"/>
         <Button x:Name="browseForFolder" Content="Browse" HorizontalAlignment="Left" Margin="800,64,0,0" VerticalAlignment="Top" Height="18" Width="82" Click="BrowseForFolder" />
         <Button x:Name="Search" Content="Search" HorizontalAlignment="Left" Margin="800,98,0,0" VerticalAlignment="Top" Height="18" Width="82" Click="SearchList"/>
-        <DataGrid x:Name="ResultsDataGrid" Margin="20,164,169,29" />
+        <DataGrid x:Name="ResultsDataGrid" Margin="20,225,169,29" />
         <Label Content="Search List" HorizontalAlignment="Left" Height="32" Margin="20,17,0,0" VerticalAlignment="Top" Width="91" />
-        <Label Content="Target Folder" HorizontalAlignment="Left" Height="32" Margin="20,61,0,0" VerticalAlignment="Top" Width="91" />
+        <Label Content="Search Folder" HorizontalAlignment="Left" Height="32" Margin="20,61,0,0" VerticalAlignment="Top" Width="91" />
         <StackPanel Margin="20,107,169,630" StackPanel.Orientation="Horizontal">
             <Label Content="Include files of this type :" Width="160" Height="27" />
             <CheckBox x:Name="pdfCheckBox" ContentControl.Content="*.pdf" IsChecked="True" Width="80" Height="16" Checked="pdfCheckBox_Checked" Unchecked="pdfCheckBox_Unchecked"/>
@@ -23,6 +23,9 @@
             <CheckBox x:Name="mapCheckBox" ContentControl.Content="*.map" Width="80" Height="16"  Checked="mapCheckBox_Checked" Unchecked="mapCheckBox_Unchecked"/>
             <CheckBox x:Name="xmlCheckBox" ContentControl.Content="*.xml" Width="80" Height="16" Checked="xmlCheckBox_Checked" Unchecked="xmlCheckBox_Unchecked" />
         </StackPanel>
-        <Button Content="Export to CSV" HorizontalAlignment="Left" Height="18" Margin="895,737,0,0" VerticalAlignment="Top" Width="100" Click="ExportToCSV" />
+        <Button Content="Export to CSV" HorizontalAlignment="Left" Height="18" Margin="782,190,0,0" VerticalAlignment="Top" Width="100" Click="ExportToCSV" />
+        <TextBox x:Name="outputFolderTextBox" HorizontalAlignment="Left" Margin="116,190,0,0"  VerticalAlignment="Top" Width="540" Height="18" />
+        <Label Content="Output Location" HorizontalAlignment="Left" Height="32" Margin="20,187,0,0" VerticalAlignment="Top" Width="115" />
+        <Button Content="Browse" HorizontalAlignment="Left" Height="18" Margin="670,190,0,0" VerticalAlignment="Top" Width="100" Click="browseForOutput" />
     </Grid>
 </Window>
